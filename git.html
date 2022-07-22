@@ -1,0 +1,71 @@
+<!-- 
+   CRUD : create read update delete >> 생코썜의 코딩 철학!
+   CLI : command line interface
+   GUI : graphic user interface
+   branch : 
+   master : 최신 버전? head -> master 를 가르킨다는건 최신버전이라는 뜻?
+   git config --global core.editor "nano"
+   : git commit 시 기본에디터가 사용되는데 command 창에서 기본으로 사용되는 에디터를 nano 에디터로 바꾸기 위해 사용되는 명령어
+
+------------------ 설치 ------------------
+   git 사이트에서 설치
+   terminal 에서 git 을 치면 'git ~~~~' 여러가지 명령어가 나온다면 깃이 설치 된 것
+
+------------------ posix CLi ------------------
+   pwd : 현재 내가 위치해 있는 디렉토리 확인
+   ls -al : 현재 내가 위치해 있는 디렉토리 안에 디렉토리(파일) >> 숨겨진 파일까지 다 표시 된다 
+      : drwxr.... >> 디렉토리
+      : -rw.... >> 파일
+   mkdir(make directory) hello-git-cli : 현재 디렉토리 안에 디렉토리를 만들겠다
+   cd(change directory) .git : 현재 사용중인 디렉토리 위치 바꾸기
+
+   *중요*
+   git init . >> 현재 디렉토리를 git으로 버전 관리를 하고 싶을 때 사용 (init: 초기화)
+   nano : 파일 만들기 (파일명, 파일의 내용 작성 가능) 
+   cat : 파일의 내용을 확인
+   git status : 현재 파일 git 버전관리 상태 확인
+   mv (기존의 폴더명) (바꾸고 싶은 폴더 명): 폴더 명을 바꾸고 싶을 떄 
+
+   ************* git staging 하기 *************
+   git add hello.txt : working tree 에서 수정된 파일을 staging area 에 올려두기
+   git add . : git 현재 디렉토리 안에 있는 모든 파일 staging
+
+   ************* git Repository로 commit 하기 *************
+   git commit : git commit 하기 (staging area 에서 repository 로 이동시키기 
+   git commit -m "깃 수정 내용 메모"  : commit 과 동시에 수정내용 메모하기
+
+   ************* git staging 과 commit 한번에 하기 *************
+   git commit -am "깃 수정 내용 메모" : add 와 commit 한 번에 하기
+   (한번은 tracked 된 상태여야 자동으로 올라간다.)
+
+   ************* git 버전관리 확인 *************
+   git log : git commit 한 내용 들 확인하기
+   git log --stat : git commit 한 파일들과 메세지 확인
+   git diff : 수정 내용과 삭제 내용 확인(차이점 확인)(검토하기... 매우중요) 
+   git log -p : 문서 상에서 수정된 내용과 어떤 파일에 기존 내용과 수정된 내용 확인
+
+   ************* git 버전 되돌리기 *************
+   :: git checkout 과 git reset
+         git checkout :: HEAD 만 이동 시키고 branch(master) 는 가장 최신 버전에 있다
+         git reset :: HEAD 와 branch(master)를 한번에 움직여 가장 최신버전을 바꾼다
+
+   :: git reset 과 git revert
+         git reset --hard ~~ : 가장 최신버전을 다 삭제 하고 바꾸고 싶은 이전 버전으로 돌간다.
+         git revert ~~ : 돌아가고 싶은 버전을 새로 커밋하여 만든다 HEAD 와 branch(master)도 이동한다.
+
+   git checkout bc874de776d5c90c1d411f7a8c4e5fe881246760 : git checkout 고유번호 를 입력한다면 이전 버전으로 돌아갈 수 있다
+   git checkout master : master 는 가장 최신 버전으로 돌아가기
+   git reset --hard bc874de776d5c90c1d411f7a8c4e5fe881246760 : 버전 바꾸기
+   (--hard) :: 가장 강력하게 가장 최신 버전은 날리고 이전 버전으로 돌아가고 싶을 때
+   (--soft) :: 가장 최신 버전은 남겨두고 master 옮기기??(알고만 있기)
+   
+   git revert bc874de776d5c90c1d411f7a8c4e5fe881246760 :: 나머지 버전은 남겨두고 이전 버전으로 돌아기기
+   (역순으로 차례대로 돌아가야 함 (그렇지 않다면 한번에 점프하면 점프한 버전들이 에러가 날 수 있음))
+
+------------------ working tree ------------------
+   woking tree : 파일 수정 하는 영역
+   staging area : 수정한 파일을 한 곳에 묶어 두는 곳?
+   Repository : 원격 저장소에 staging area에 묶여 있는 파일들을 버전 별로 저장 해두는 곳
+
+
+-->
